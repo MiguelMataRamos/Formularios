@@ -3,6 +3,7 @@ package com.example.formularios
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.size
 import com.example.formularios.databinding.ActivityEjercicio2Binding
 
 class Ejercicio2 : AppCompatActivity() {
@@ -14,8 +15,23 @@ class Ejercicio2 : AppCompatActivity() {
     }
 
     fun registrar(view:View){
-        if (bind.nombre.text.isNullOrBlank()){
+        var Nvalido = true
+        var Pvalido = true
+        var Evalido = true
 
+        if (bind.nombre.text.isNullOrBlank()){
+            bind.lnombre.error="Debes ingresar un nombre. ¡CATETO!"
+            Nvalido = false
+        }
+
+        if(bind.pass.text!!.length < 9){
+            bind.lpass.error = "La contraseña debe tener minimo 9 caracteres"
+            Pvalido = false
+        }
+
+        if (!bind.correo.text!!.contains("@") && !bind.correo.text?.contains(".")!!){
+            bind.lcorreo.error = "Debes introducir un correo electronico"
+            Evalido = false
         }
 
     }
