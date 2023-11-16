@@ -21,7 +21,10 @@ class MainActivity : AppCompatActivity() {
                 var intent = Intent(this,Ejercicio2::class.java)
                 startActivity(intent)
             }
-
+            R.id.ej3 -> {
+                var intent = Intent(this,Ejercicio3::class.java)
+                startActivity(intent)
+            }
 
         }
     }

@@ -16,6 +16,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -55,7 +56,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/lpass"
         app:errorEnabled="true"
-        app:helperText="Contraseña"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/lcorreo"
@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-
+            android:hint="Contraseña"
             />
 
 
