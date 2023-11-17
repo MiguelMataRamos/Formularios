@@ -1,9 +1,9 @@
 package com.example.formularios
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.size
 import com.example.formularios.databinding.ActivityEjercicio2Binding
 
 class Ejercicio2 : AppCompatActivity() {
@@ -24,14 +24,19 @@ class Ejercicio2 : AppCompatActivity() {
             Nvalido = false
         }
 
-        if(bind.pass.text!!.length < 9){
+        if(bind.pass.text?.length!! < 9){
             bind.lpass.error = "La contraseña debe tener minimo 9 caracteres"
             Pvalido = false
         }
 
-        if (!bind.correo.text!!.contains("@") && !bind.correo.text?.contains(".")!!){
+        if (!bind.correo.text?.contains("@")!! && !bind.correo.text?.contains(".")!!){
             bind.lcorreo.error = "Debes introducir un correo electronico"
             Evalido = false
+        }
+
+        if (Nvalido && Pvalido && Evalido){
+            var intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
         }
 
     }

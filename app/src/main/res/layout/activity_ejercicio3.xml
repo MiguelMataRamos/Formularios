@@ -6,4 +6,118 @@
     android:layout_height="match_parent"
     tools:context=".Ejercicio3">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lmail"
+        android:hint="Correo electronico"
+        app:layout_constraintTop_toTopOf="parent"
+        app:errorEnabled="true"
+        android:layout_marginHorizontal="10dp"
+        app:helperText="EMAIL"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mail"
+            android:inputType="textEmailAddress"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lpass"
+        app:layout_constraintTop_toBottomOf="@+id/lmail"
+        android:hint="Contraseña"
+        app:passwordToggleEnabled="true"
+        app:errorEnabled="true"
+        android:layout_marginHorizontal="10dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pass"
+            android:inputType="textPassword"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lnombre"
+        app:layout_constraintTop_toBottomOf="@+id/lpass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lcp"
+        app:errorEnabled="true"
+        android:hint="Nombre"
+        android:layout_marginHorizontal="10dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombre"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lcp"
+        app:layout_constraintTop_toBottomOf="@+id/lpass"
+        app:layout_constraintStart_toEndOf="@id/lnombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="CP"
+        android:layout_marginHorizontal="10dp"
+        app:errorEnabled="true"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cp"
+            android:inputType="textPostalAddress"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_edit_text_fecha"
+        app:layout_constraintTop_toBottomOf="@+id/lnombre"
+        android:layout_marginHorizontal="10dp"
+        android:hint="Fecha de nacimiento"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fecha"
+            android:focusable="false"
+            android:inputType="date"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b"
+        app:layout_constraintTop_toBottomOf="@+id/layout_edit_text_fecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="Enviar Formulario"
+        android:onClick="pasar"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
