@@ -27,6 +27,7 @@ class Ejercicio3 : AppCompatActivity() {
             bmail = false
             bind.lmail.error = "No es un formato de EMAIL"
         }else{
+            bind.lmail.helperText = null
             bind.lmail.error = null
         }
 
@@ -41,6 +42,7 @@ class Ejercicio3 : AppCompatActivity() {
             bind.lpass.error = "Debe contener mayusculas, minusculas y algun numero"
             bpass = false
         }else{
+            bind.lpass.helperText = null
             bind.lpass.error = null
         }
 
@@ -49,6 +51,7 @@ class Ejercicio3 : AppCompatActivity() {
             bcp = false
             bind.lcp.error = "Debe ser numerico"
         }else{
+            bind.lpass.helperText = null
             bind.lcp.error = null
         }
 
