@@ -14,7 +14,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:errorEnabled="true"
         android:layout_marginHorizontal="10dp"
-        app:helperText="EMAIL"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -92,7 +91,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layout_edit_text_fecha"
+        android:id="@+id/lfecha"
         app:layout_constraintTop_toBottomOf="@+id/lnombre"
         android:layout_marginHorizontal="10dp"
         android:hint="Fecha de nacimiento"
@@ -112,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/b"
-        app:layout_constraintTop_toBottomOf="@+id/layout_edit_text_fecha"
+        app:layout_constraintTop_toBottomOf="@+id/lfecha"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"

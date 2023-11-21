@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.text.isDigitsOnly
 import com.example.formularios.databinding.ActivityEjercicio3Binding
+import com.google.android.material.datepicker.MaterialDatePicker
 
 class Ejercicio3 : AppCompatActivity() {
     private lateinit var bind: ActivityEjercicio3Binding
@@ -13,12 +14,28 @@ class Ejercicio3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind = ActivityEjercicio3Binding.inflate(layoutInflater)
         setContentView(bind.root)
+
+        bind.fecha.setOnClickListener {
+            val builder = MaterialDatePicker.Builder.datePicker()
+            val picker = builder.build()
+
+            picker.addOnPositiveButtonClickListener {
+                bind.fecha.setText(picker.headerText)
+            }
+
+            picker.show(supportFragmentManager,"tag")
+
+        }
+
     }
+
+
 
     fun pasar(view: View) {
         var bmail = true
         var bpass = true
         var bcp = true
+        var bdate = true
 
         if (bind.mail.text.isNullOrBlank()) {
             bind.lmail.error = "EMAIL necesario"
@@ -55,7 +72,22 @@ class Ejercicio3 : AppCompatActivity() {
             bind.lcp.error = null
         }
 
-        if (bmail && bpass && bcp) {
+        if (bind.fecha.text.toString() != ""){
+            var fecha = bind.fecha?.text?.split(" ")
+            if (fecha!=null && fecha[2].toInt() > 2005){
+                bdate = false
+                bind.lfecha.error = "Debes ser mayor de edad"
+            }else{
+                bind.lfecha.error = null
+            }
+        }else{
+            bind.lfecha.error = "Debe introducir una fecha de nacimiento"
+        }
+
+
+
+
+        if (bmail && bpass && bcp && bdate) {
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
